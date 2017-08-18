@@ -1196,7 +1196,7 @@ kernelmodules: $(TARGET_PREBUILT_KERNEL) | $(ACP)
 	$(eval _src := $(call word-colon,1,$(cf)))				\
 	$(eval _dest := $(call word-colon,2,$(cf)))				\
 	$(eval _full_dest := $(call append-path,$(PRODUCT_OUT),$(_dest)))	\
-	$(eval _dest_dir := $(call dir, $(_full_dest))) 			\
+	$(eval _dest_dir := $(dir $(_full_dest))) 			\
 	mkdir -p $(_dest_dir); 							\
 	$(ACP) $(_src) $(_full_dest);						\
 	)
